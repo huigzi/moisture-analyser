@@ -1,0 +1,305 @@
+/*
+ * MT9V024Local.h
+ *
+ * MT9V024 sensor Driver internal header file
+ *
+ * Copyright (C) 2009 Texas Instruments Incorporated - http://www.ti.com/
+ *
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted provided that the following conditions
+ *  are met:
+ *
+ *    Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ *    Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the
+ *    distribution.
+ *
+ *    Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ *  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ *  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ *  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ *  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ *  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ *  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ *  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+/**
+ *  \file   MT9V024Local.h
+ *
+ *  \brief  MT9V024 external Image Sensor related parameters. This file contains
+ *          the interfaces, data types and symbolic definitions that are
+ *          required for the MT9V024 external image sensor interface.
+ */
+
+#ifndef _MT9V024LOCAL_H_
+#define _MT9V024LOCAL_H_
+
+/* ========================================================================== */
+/*                          INCLUDE FILES                                     */
+/* ========================================================================== */
+
+#include <Edc.h>
+#include <MT9V024.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif /* extern "C" */
+
+/* ========================================================================== */
+/*                          MACRO DEFINITIONS                                 */
+/* ========================================================================== */
+/**\brief MT9V024 8bit I2C address.  */
+#define MT9V024_IIC_ADDR                     (0xB8 >> 1)
+
+/**
+ *  \brief Defines for MT9V024 System Registers
+ */
+#define MT9V024_GAIN_REG            	(0x3000u)
+#define MT9V024_BGAIN_REG            (0x3001u)
+#define MT9V024_RGAIN_REG            (0x3002u)
+#define MT9V024_GGAIN_REG            (0x3003u)
+#define MT9V024_SCTRL00_REG          (0x3004u)
+#define MT9V024_SCTRL01_REG          (0x3005u)
+#define MT9V024_BRGAINH_REG          (0x3006u)
+#define MT9V024_GGAINH_REG           (0x3007u)
+#define MT9V024_BLC_REG          	(0x3008u)
+#define MT9V024_SCTRL03_REG          (0x3009u)
+#define MT9V024_PIDH_REG          	(0x300Au)
+#define MT9V024_PIDL_REG          	(0x300Bu)
+#define MT9V024_SCTRL04_REG          (0x300Cu)
+#define MT9V024_SCTRL05_REG          (0x300Eu)
+#define MT9V024_AECH_REG          	(0x300Fu)
+#define MT9V024_AECL_REG          	(0x3010u)
+#define MT9V024_CLK_REG          	(0x3011u)
+#define MT9V024_SCTRL06_REG          (0x3012u)
+#define MT9V024_SCTRL07_REG          (0x3013u)
+#define MT9V024_SCTRL08_REG          (0x3014u)
+#define MT9V024_SCTRL09_REG          (0x3015u)
+#define MT9V024_SCTRL10_REG          (0x3016u)
+#define MT9V024_HSTARTH_REG          (0x3017u)
+#define MT9V024_HSIZEINH_REG         (0x3018u)
+#define MT9V024_VSATRTH_REG          (0x3019u)
+#define MT9V024_VSIZEINH_REG         (0x301Au)
+#define MT9V024_PSHFT_REG          	(0x301Bu)
+#define MT9V024_MIDH_REG          	(0x301Cu)
+#define MT9V024_MIDL_REG          	(0x301Du)
+#define MT9V024_SCTRL11_REG          (0x301Eu)
+#define MT9V024_LAECL_REG          	(0x301Fu)
+#define MT9V024_SCTRL12_REG          (0x3020u)
+#define MT9V024_BDNUM_REG          	(0x3021u)
+#define MT9V024_SCTRL14_REG          (0x3022u)
+#define MT9V024_SCTRL15_REG          (0x3023u)
+#define MT9V024_WPT_REG          	(0x3024u)
+#define MT9V024_BPT_REG          	(0x3025u)
+#define MT9V024_VPT_REG          	(0x3026u)
+#define MT9V024_SCTRL16_REG          (0x3027u)
+#define MT9V024_SCTRL17_REG          (0x3028u)
+#define MT9V024_CSENDL_REG          	(0x3029u)
+#define MT9V024_CSENDH_REG          	(0x302Au)
+#define MT9V024_RENDL_REG          	(0x302Bu)
+#define MT9V024_RENDH_REG          	(0x302Cu)
+#define MT9V024_ADDVSL_REG          	(0x302Du)
+#define MT9V024_ADDVSH_REG          	(0x302Eu)
+#define MT9V024_YAVG_REG          	(0x302Fu)
+#define MT9V024_LAECH_REG          	(0x3030u)
+#define MT9V024_HSIZEOH_REG          (0x3031u)
+#define MT9V024_VSIZEOH_REG          (0x3032u)
+#define MT9V024_HVOFFS_REG          	(0x3033u)
+#define MT9V024_SCTRL18_REG          (0x3034u)
+#define MT9V024_SCTRL19_REG          (0x3035u)
+#define MT9V024_SCTRL20_REG          (0x3036u)
+#define MT9V024_SCTRL21_REG          (0x3037u)
+#define MT9V024_ACTRL1_REG          	(0x3038u)
+#define MT9V024_ACTRL2_REG          	(0x3039u)
+#define MT9V024_ACTRL3_REG          	(0x303Au)
+#define MT9V024_ACTRL4_REG          	(0x303Bu)
+#define MT9V024_ACTRL5_REG          	(0x303Cu)
+#define MT9V024_ACTRL6_REG          	(0x303Du)
+#define MT9V024_ACTRL7_REG          	(0x303Eu)
+#define MT9V024_ACTRL8_REG          	(0x303Fu)
+#define MT9V024_ACTRL9_REG          	(0x3040u)
+#define MT9V024_ACTRL10_REG          (0x3041u)
+#define MT9V024_ACTRL11_REG          (0x3042u)
+#define MT9V024_ACTRL12_REG          (0x3043u)
+#define MT9V024_ACTRL13_REG          (0x3044u)
+#define MT9V024_ACTRL14_REG          (0x3045u)
+#define MT9V024_ACTRL15_REG          (0x3046u)
+#define MT9V024_ACTRL16_REG          (0x3047u)
+#define MT9V024_ACTRL17_REG          (0x3048u)
+#define MT9V024_ACTRL18_REG          (0x3049u)
+#define MT9V024_SCTRL22_REG          (0x304Au)
+#define MT9V024_ACTRL19_REG          (0x304Bu)
+#define MT9V024_ACTRL20_REG          (0x304Cu)
+#define MT9V024_ACTRL21_REG          (0x304Du)
+#define MT9V024_ACTRL22_REG          (0x304Eu)
+#define MT9V024_ACTRL23_REG          (0x304Fu)
+#define MT9V024_ACTRL24_REG          (0x3050u)
+#define MT9V024_ACTRL25_REG          (0x3051u)
+#define MT9V024_SCTRL24_REG          (0x3052u)
+#define MT9V024_SCTRL25_REG          (0x3053u)
+#define MT9V024_BD50ST_REG          	(0x3054u)
+#define MT9V024_BD60ST_REG          	(0x3055u)
+#define MT9V024_BLCCTRL0_REG         (0x305Au)
+#define MT9V024_ERNG_REG          	(0x305Bu)
+#define MT9V024_SCTRL32_REG          (0x305Cu)
+#define MT9V024_BLCCTRL1_REG         (0x305Du)
+#define MT9V024_BLCCTRL2_REG         (0x305Eu)
+#define MT9V024_MLEN_REG         	(0x305Fu)
+#define MT9V024_SCTRL38_REG         	(0x3062u)
+#define MT9V024_AVGZNr_REG         	(0x3063u)
+#define MT9V024_SCTRL39_REG         	(0x3064u)
+#define MT9V024_SCTRL40_REG         	(0x3065u)
+#define MT9V024_AWBBIAS_REG         	(0x3066u)
+#define MT9V024_BLC0_REG         	(0x3067u)
+#define MT9V024_BLC1_REG         	(0x3068u)
+#define MT9V024_BLC2_REG         	(0x3069u)
+#define MT9V024_HDLY1_REG         	(0x306Au)
+#define MT9V024_HDLY2_REG         	(0x306Bu)
+#define MT9V024_HFIELD_REG         	(0x306Cu)
+#define MT9V024_VFIELD_REG         	(0x306Du)
+#define MT9V024_SCTRL41_REG         	(0x306Eu)
+#define MT9V024_SCTRL42_REG         	(0x306Fu)
+#define MT9V024_5060DET_REG         	(0x3070u)	//70-7E
+#define MT9V024_AVGRHr_REG         	(0x3080u)
+#define MT9V024_AVGBHr_REG         	(0x3081u)
+#define MT9V024_AVGGRHr_REG         	(0x3082u)
+#define MT9V024_AVGGBHr_REG         	(0x3083u)
+#define MT9V024_AVGLr_REG         	(0x3084u)
+#define MT9V024_BLC1r_REG         	(0x3085u)
+#define MT9V024_BLC2r_REG         	(0x3086u)
+#define MT9V024_HVPAD_REG         	(0x3087u)
+#define MT9V024_HOFFOUT_REG         	(0x3088u)
+#define MT9V024_VOFFOUT_REG         	(0x3089u)
+#define MT9V024_SCTRL45_REG         	(0x308Au)
+#define MT9V024_BPLTH1_REG         	(0x308Bu)
+#define MT9V024_BPLTH2_REG         	(0x308Cu)
+#define MT9V024_WPTH1_REG         	(0x308Du)
+#define MT9V024_WPTH2_REG         	(0x308Eu)
+#define MT9V024_BPCNT1_REG         	(0x308Fu)
+#define MT9V024_BPCNT2_REG         	(0x3090u)
+#define MT9V024_WPCNT1_REG         	(0x3091u)
+#define MT9V024_WPCNT2_REG         	(0x3092u)
+#define MT9V024_YEN0_REG         	(0x3093u)
+#define MT9V024_SCTRL46_REG         	(0x3094u)
+#define MT9V024_SCTRL47_REG         	(0x3095u)
+#define MT9V024_SCTRL48_REG         	(0x3096u)
+#define MT9V024_VSFT_REG         	(0x3097u)
+#define MT9V024_H2SFT_REG         	(0x3098u)
+#define MT9V024_BLCGBH_REG         	(0x3099u)
+#define MT9V024_BLCGRH_REG         	(0x309Au)
+#define MT9V024_BLCBH_REG         	(0x309Bu)
+#define MT9V024_BLCRH_REG         	(0x309Cu)
+#define MT9V024_BLCL_REG         	(0x309Du)
+#define MT9V024_BLCULMT_REG         	(0x309Eu)
+#define MT9V024_BLCLLMT_REG         	(0x309Fu)
+#define MT9V024_SCTRL50_REG         	(0x30ECu)
+#define MT9V024_SCTRL51_REG         	(0x30EEu)
+#define MT9V024_OTPCTRL_REG         	(0x30EFu)
+#define MT9V024_OTPBUF_REG         	(0x30F0u)	//F0-FF
+
+#define MT9V024_GATERSTCTRL1_REG    	(0x3600u)
+#define MT9V024_GATERSTCTRL2_REG    	(0x3601u)
+#define MT9V024_GATECLKCTRL1_REG    	(0x3602u)
+#define MT9V024_GATECLKCTRL2_REG    	(0x3603u)
+#define MT9V024_SCCTRL0_REG    		(0x3604u)
+#define MT9V024_SCCTRL1_REG    		(0x3605u)
+#define MT9V024_STARTADDRH_REG    	(0x3E00u)
+#define MT9V024_STARTADDRL_REG    	(0x3E01u)
+#define MT9V024_ENDADDRH_REG    		(0x3E02u)
+#define MT9V024_ENDADDRL_REG    		(0x3E03u)
+#define MT9V024_BISTOPCNT_REG    	(0x3E04u)
+#define MT9V024_SRAMSELECT_REG    	(0x3E05u)
+#define MT9V024_OPCODEH_REG    		(0x3E06u)
+#define MT9V024_OPCODEL_REG    		(0x3E07u)
+#define MT9V024_BISTCTRL0_REG    	(0x3E08u)
+#define MT9V024_OPCODEREADY_REG   	(0x3E09u)
+#define MT9V024_BISTCTRL1_REG    	(0x3E0Au)
+#define MT9V024_ROREGOFFSET_REG   	(0x3E0Bu)
+#define MT9V024_SRAMVALL_REG    		(0x3E0Cu)
+#define MT9V024_SRAMVALH_REG   		(0x3E0Du)
+#define MT9V024_SRAMTST_REG    		(0x3E0Eu)
+
+#define MT9V024_FMTCTRL_REG    		(0x4300u)
+#define MT9V024_VFIFOCTRL0_REG    	(0x4600u)
+#define MT9V024_VFIFOCTRL1_REG    	(0x4601u)
+#define MT9V024_VFIFOCTRL2_REG    	(0x4602u)
+#define MT9V024_VFIFOCTRL3_REG    	(0x4603u)
+#define MT9V024_VSUB2CTRL_REG    	(0x46C0u)
+
+#define MT9V024_SHPMANH_REG    		(0x4700u)
+#define MT9V024_SHPMANL_REG    		(0x4701u)
+#define MT9V024_SHLMAN_REG    		(0x4702u)
+#define MT9V024_SVLMAN_REG    		(0x4703u)
+#define MT9V024_SVPMANH_REG    		(0x4704u)
+#define MT9V024_SVPMANL_REG    		(0x4705u)
+#define MT9V024_HVPMANH_REG    		(0x4706u)
+#define MT9V024_HVPMANL_REG    		(0x4707u)
+#define MT9V024_HVLMAN_REG    		(0x4708u)
+#define MT9V024_VSLMAN_REG    		(0x4709u)
+#define MT9V024_LLVSPMAN_REG    		(0x470Au)
+#define MT9V024_VSPMAN_REG    		(0x470Bu)
+#define MT9V024_LLMANH_REG    		(0x470Cu)
+#define MT9V024_LLMANL_REG    		(0x470Du)
+#define MT9V024_CCIRCTRL_REG    		(0x470Eu)
+#define MT9V024_VREFOFFSET_REG    	(0x470Fu)
+#define MT9V024_VREFADJ_REG    		(0x4710u)
+#define MT9V024_PADLCNT_REG    		(0x4711u)
+#define MT9V024_PADRCNT_REG    		(0x4712u)
+#define MT9V024_VREFST_REG    		(0x4713u)
+#define MT9V024_VREFEND_REG    		(0x4714u)
+#define MT9V024_VREFENDST_REG    	(0x4715u)
+#define MT9V024_FREFST_REG    		(0x4716u)
+#define MT9V024_FIELDVSTFREFST_REG   (0x4717u)
+#define MT9V024_FIELDVST_REG    		(0x4718u)
+#define MT9V024_FIELDHSTL_REG    	(0x4719u)
+#define MT9V024_FIELDHSTH_REG    	(0x471Au)
+#define MT9V024_DVPCTRL00_REG    	(0x471Bu)
+#define MT9V024_DVPCTRL01_REG    	(0x471Cu)
+#define MT9V024_DVPCTRL02_REG    	(0x471Du)
+#define MT9V024_DVPCTRL03_REG    	(0x471Eu)
+
+#define MT9V024_SOFTRESET_ENABLE    	(0x90u)
+#define MT9V024_SOFTRESET_DISABLE   	(0x10u)
+
+
+/* ========================================================================== */
+/*                              STRUCTURES                                    */
+/* ========================================================================== */
+/**
+ *  \brief Instance State object
+ *  Sensor object structure for MT9V024 external Image Sensor
+ */
+typedef struct MT9V024_SensorObj_t
+{
+    Int8                    sensorName[20];
+    /**< Sensor name                                                          */
+    Edc_ControlBusType      edcCtrlBusType;
+    /**< Type of the control bus (SPI or I2C)                                 */
+    Int8                    edcCtrlBusName[20];
+    /**< Control bus (I2C or SPI) name                                        */
+    Uint8                   edcCtrlDeviceAddr;
+    /**< Sensor Control bus address                                           */
+}MT9V024_SensorObj;
+
+#ifdef __cplusplus
+}
+#endif /* extern "C" */
+
+#endif /* #ifndef _MT9V024LOCAL_H_ */
+
+/******************************************************************************/
+/* End of file                                                                */
+/******************************************************************************/

@@ -1,0 +1,13 @@
+package.xdc
+Platform.xdc
+Platform.xs
+package/gooaoBoard.sch
+package/.vers_g180
+package/.vers_r170
+package/.vers_b150
+package/.xdc-y44
+package/gooaoBoard.java
+package/gooaoBoard.class
+package/package_gooaoBoard.c
+package/package.defs.h
+package/gooaoBoard.ccs

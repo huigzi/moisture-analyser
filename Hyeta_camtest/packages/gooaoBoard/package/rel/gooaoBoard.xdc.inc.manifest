@@ -1,0 +1,17 @@
+gooaoBoard/Platform.xdc
+gooaoBoard/Platform.xs
+gooaoBoard/config.bld
+gooaoBoard/package/.vers_b150
+gooaoBoard/package/.vers_g180
+gooaoBoard/package/.vers_r170
+gooaoBoard/package/.xdc-y44
+gooaoBoard/package/build.cfg
+gooaoBoard/package/gooaoBoard.ccs
+gooaoBoard/package/gooaoBoard.class
+gooaoBoard/package/gooaoBoard.java
+gooaoBoard/package/gooaoBoard.sch
+gooaoBoard/package/package.bld.xml
+gooaoBoard/package/package.defs.h
+gooaoBoard/package/package_gooaoBoard.c
+gooaoBoard/package.bld
+gooaoBoard/package.xdc

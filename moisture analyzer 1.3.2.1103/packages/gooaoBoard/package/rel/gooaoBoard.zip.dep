@@ -1,0 +1,34 @@
+gooaoBoard.zip: Platform.xdc
+Platform.xdc:
+gooaoBoard.zip: Platform.xs
+Platform.xs:
+gooaoBoard.zip: config.bld
+config.bld:
+gooaoBoard.zip: package/.vers_b150
+package/.vers_b150:
+gooaoBoard.zip: package/.vers_g180
+package/.vers_g180:
+gooaoBoard.zip: package/.vers_r170
+package/.vers_r170:
+gooaoBoard.zip: package/.xdc-y44
+package/.xdc-y44:
+gooaoBoard.zip: package/build.cfg
+package/build.cfg:
+gooaoBoard.zip: package/gooaoBoard.ccs
+package/gooaoBoard.ccs:
+gooaoBoard.zip: package/gooaoBoard.class
+package/gooaoBoard.class:
+gooaoBoard.zip: package/gooaoBoard.java
+package/gooaoBoard.java:
+gooaoBoard.zip: package/gooaoBoard.sch
+package/gooaoBoard.sch:
+gooaoBoard.zip: package/package.bld.xml
+package/package.bld.xml:
+gooaoBoard.zip: package/package.defs.h
+package/package.defs.h:
+gooaoBoard.zip: package/package_gooaoBoard.c
+package/package_gooaoBoard.c:
+gooaoBoard.zip: package.bld
+package.bld:
+gooaoBoard.zip: package.xdc
+package.xdc:

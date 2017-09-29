@@ -1,0 +1,34 @@
+fr_Board.zip: Platform.xdc
+Platform.xdc:
+fr_Board.zip: Platform.xs
+Platform.xs:
+fr_Board.zip: config.bld
+config.bld:
+fr_Board.zip: package/.vers_b150
+package/.vers_b150:
+fr_Board.zip: package/.vers_g180
+package/.vers_g180:
+fr_Board.zip: package/.vers_r170
+package/.vers_r170:
+fr_Board.zip: package/.xdc-y44
+package/.xdc-y44:
+fr_Board.zip: package/build.cfg
+package/build.cfg:
+fr_Board.zip: package/fr_Board.ccs
+package/fr_Board.ccs:
+fr_Board.zip: package/fr_Board.class
+package/fr_Board.class:
+fr_Board.zip: package/fr_Board.java
+package/fr_Board.java:
+fr_Board.zip: package/fr_Board.sch
+package/fr_Board.sch:
+fr_Board.zip: package/package.bld.xml
+package/package.bld.xml:
+fr_Board.zip: package/package.defs.h
+package/package.defs.h:
+fr_Board.zip: package/package_fr_Board.c
+package/package_fr_Board.c:
+fr_Board.zip: package.bld
+package.bld:
+fr_Board.zip: package.xdc
+package.xdc:

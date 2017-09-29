@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="GBK"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="configPkg" version="" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/gooao_fr_c6748_pe674.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="C:/Users/su/workspace/Cloud_upp/gooao_fr_c6748.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/gooao_fr_c6748_pe674.mak" src="package.bld"/>
+        <srcFile name="package/cfg/gooao_fr_c6748_pe674.oe674.dep" src="package/cfg/gooao_fr_c6748_pe674.c"/>
+        <srcFile name="package/cfg/gooao_fr_c6748_pe674.dep" src="package/cfg/gooao_fr_c6748_pe674.cfg"/>
+        <srcFile name="package/cfg/gooao_fr_c6748.xe674.mak" src="package.bld"/>
+        <srcFile name="package/rel/configPkg.tar.dep" src="package/rel/configPkg.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.elf.C674"
+            version="ti.targets.elf.C674{1,0,7.4,1"
+            platform="ti.platforms.evmDA830"
+            isa="674"
+            suffix="e674"
+            rootDir="C:/ti/ccsv5/tools/compiler/c6000_7.4.1"
+            os="undefined"
+            rts="ti.targets.rts6000">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="undefined"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <configurations>
+    <configuration name="gooao_fr_c6748"
+        pname="gooao_fr_c6748.pe674"
+        target="ti.targets.elf.C674"
+        platform="fr_Board"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/gooao_fr_c6748_pe674.cfg"
+        xCfgPrefix="package/cfg/gooao_fr_c6748_pe674"
+        cfgScript="C:/Users/su/workspace/Cloud_upp/gooao_fr_c6748.cfg"
+        cfgArgs="null"
+        />
+    </configurations>
+    <executables>
+    <executable name="gooao_fr_c6748"
+        pname="gooao_fr_c6748.xe674"
+        target="ti.targets.elf.C674"
+        platform="fr_Board"
+        profile="release"
+        xCfgScript="package/cfg/gooao_fr_c6748_pe674.cfg"
+        xCfgPrefix="package/cfg/gooao_fr_c6748_pe674"
+        cfgScript="C:/Users/su/workspace/Cloud_upp/gooao_fr_c6748.cfg"
+        cfgArgs="null"
+        />
+    </executables>
+    <tests>
+    <test exeName="gooao_fr_c6748.xe674"
+        args=""
+        groupName="gooao_fr_c6748.xe674"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="configPkg"
+        pname="configPkg.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

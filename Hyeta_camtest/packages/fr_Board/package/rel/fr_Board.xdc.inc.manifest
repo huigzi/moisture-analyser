@@ -1,0 +1,17 @@
+fr_Board/Platform.xdc
+fr_Board/Platform.xs
+fr_Board/config.bld
+fr_Board/package/.vers_b150
+fr_Board/package/.vers_g180
+fr_Board/package/.vers_r170
+fr_Board/package/.xdc-y44
+fr_Board/package/build.cfg
+fr_Board/package/fr_Board.ccs
+fr_Board/package/fr_Board.class
+fr_Board/package/fr_Board.java
+fr_Board/package/fr_Board.sch
+fr_Board/package/package.bld.xml
+fr_Board/package/package.defs.h
+fr_Board/package/package_fr_Board.c
+fr_Board/package.bld
+fr_Board/package.xdc
